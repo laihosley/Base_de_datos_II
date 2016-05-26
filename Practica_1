@@ -1,0 +1,6 @@
+--VAMOS A CREAR UNA TABÑA SIMPLE PARA PROBAR  
+create database prueba;
+use prueba;
+create table dance(ID_Dance INTEGER,
+Nombre VARCHAR2(40)
+);
