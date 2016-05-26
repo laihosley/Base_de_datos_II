@@ -1,0 +1,41 @@
+create table empleado (ID_Empleado INTEGER,
+Nombre_Empleado VARCHAR2(30),
+Sueldo_Base FLOAT,
+Fecha_Contratacion DATE,
+CONSTRAINT Pk_ID_Empleado PRIMARY KEY (ID_Empleado)
+);
+
+
+--ACTIVAMOS LA CONSOLA DE ORACLE, SE INVOCA UNA VEZ POR SESION DE---
+
+SET SERVEROUTPUT ON;
+
+DECLARE 
+My_Fecha DATE;
+
+BEGIN
+
+  My_Fecha:=TO_DATE('02-MAY-2016','DD,MON,YYYY');
+INSERT INTO empleado VALUES(2,'Alexander',250,My_Fecha);
+  dbms_output.put_line('Se guardo tu registro con exito amiguito!');
+exception
+  when others
+    then
+      dbms_output.put_line('Lo siento pero metiste la pata tonto (A)');
+END;
+/
+
+SELECT *FROM empleado;
+
+
+/*
+Veremos un nuevo objeto de base de datos que se llama procedimiento almacenado
+*/
+
+begin
+suma(5,4);
+end;
+/
+
+
+
